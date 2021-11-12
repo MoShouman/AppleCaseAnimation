@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Apple airpods animation</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="theme-color" content="#000000">
+        <meta charset="utf-8">
+        <link rel="icon" href="apple-black-logo.png">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+        <!-- keywords and description -->
+        <meta name="keywords" content="Apple animation fancy animation">
+        <meta name="description" content="Apple airpods animation">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="details">
+                <div style="margin-bottom: 15rem;">
+                    <p class="p1">With the MagSafe Charging Case, AirPods deliver more than 24 hours of battery life. The charing case is compatible with wireless chargers, including MagSafe 
+                    <span style="letter-spacing: -5px;">——</span>
+                    &nbsp;making wireless charging a snap with easy attachment for added convenience. When the battery is low, AirPods Pro sned a notification to your IPhone leeting you know it's time to charge.
+                    </p>
+                </div>
+
+                <div class="sections">
+                    <p class="small-sections p2" >
+                        More than <br/>
+                        <span>24</span>
+                        <span>hrs</span> <br/>
+                        of listening time with multiple additional charges
+                        in the case<sup>3</sup>
+                    </p>
+                </div>
+
+                <div class="sections">
+                    <p class="small-sections p3" >
+                        Up to <br/>
+                        <span>4.5</span> 
+                        <span >hrs</span> <br/>
+                        of listening time with one charges<sup>4</sup>
+                    </p>
+                </div>
+
+                <div class="sections">
+                    <p class="small-sections p4">
+                        Around <br/>
+                        <span>1</span> 
+                        <span>hrs</span> <br/>
+                        of listening time with only 5 minutes of charging<sup>5</sup>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- P5JS for img sequence -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+        <script src="index.js"></script>
+        <script>
+            
+            $(window).scroll(()=>{
+
+                    var distanceTopP2 = $('.p2').offset().top - $(window).scrollTop();
+                    var distanceBottomP2 =  window.innerHeight - document.querySelector('.p2').getBoundingClientRect().bottom;
+                    //handling first paragraph
+                    $('.p1').css('opacity', 1 - $(window).scrollTop()/200)
+
+                    if(distanceTopP2 > -20 && distanceBottomP2 < 550){    
+                        $('.p2').css('opacity', 0 + $(window).scrollTop()/700)
+                        $('.p3').css('opacity', 0 + $(window).scrollTop()/1000)
+                        $('.p4').css('opacity', 0 + $(window).scrollTop()/1100)
+                    } else if (distanceTopP2 <= -20 ){
+                        $('.p2').css('opacity', 1 - $(window).scrollTop()/700)
+                        $('.p3').css('opacity', 1 - $(window).scrollTop()/1000)
+                        $('.p4').css('opacity', 1 - $(window).scrollTop()/1100)
+                    }
+
+                    })
+        </script>
+    
+    </body>
+
+</html>
